@@ -1,0 +1,9 @@
+<div class="category-container">
+  <h2>{{ category }}</h2>
+  <div class="recipe-list">
+    <div class="recipe-item" *ngFor="let recipe of recipes" (click)="openImage(recipe)">
+      <ion-img [src]="recipe.pictureUrl || 'assets/img/placeholder.png'" class="recipe-img"></ion-img>
+      <div class="name">{{ recipe.name }}</div>
+    </div>
+  </div>
+</div>

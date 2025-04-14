@@ -1,0 +1,18 @@
+<h1>Login</h1>
+
+@if(errorMessage) {
+  <div>
+    <p>{{errorMessage}}</p>
+  </div>
+}
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div>
+    <input type="email" placeholder="Email" formControlName="email"/>
+  </div>
+  <div>
+    <input type="password" placeholder="Password" formControlName="password"/>
+  </div>
+  <div>
+    <ion-button type="submit">Login</ion-button>
+  </div>

@@ -9,7 +9,7 @@ import { IonButton,IonInput } from "@ionic/angular/standalone";
   selector: 'login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  imports:[CommonModule, ReactiveFormsModule, FormsModule,IonButton,IonInput]
+  imports:[CommonModule, ReactiveFormsModule, FormsModule,IonButton]
 })
 export class LoginComponent  implements OnInit {
   ngOnInit() {}

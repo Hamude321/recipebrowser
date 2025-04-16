@@ -8,23 +8,10 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-item>
-    <ion-input [(ngModel)]="changes.name" label="Name" labelPlacement="stacked"></ion-input>
-  </ion-item>
-  
-  <ion-item>
-    <!-- <ion-label position="stacked">Category</ion-label> -->
-    <ion-select [(ngModel)]="changes.category" interface="action-sheet">
-      <div slot="label">Category</div>
-      <ion-select-option *ngFor="let cat of categories$ | async" [value]="cat">{{ cat }}</ion-select-option>
-    </ion-select>
-  </ion-item>
-  
-
-  <ion-item>
-    <ion-input [(ngModel)]="newCategory" label="Category"></ion-input>
-    <ion-button (click)="addCategory()">Add Category</ion-button>
-  </ion-item>
-  
-  <ion-button color="success" expand="block" (click)="onSaveClicked()">Save</ion-button>
+  <recipe-form
+    [mode]="'edit'"
+    [recipe]="recipe"
+    (formSubmitted)="submitChanges($event)"
+    (canceled)="closeModal()">
+  </recipe-form>
 </ion-content>

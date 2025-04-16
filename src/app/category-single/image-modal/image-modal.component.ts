@@ -8,7 +8,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { deleteRecipe } from 'src/app/services/store/recipe/recipe.actions';
-import { arrowBack, logOutOutline } from "ionicons/icons";
 import { addIcons } from 'ionicons';
 import * as icons from 'ionicons/icons';
 
@@ -17,7 +16,7 @@ import * as icons from 'ionicons/icons';
   templateUrl: './image-modal.component.html',
   styleUrls: ['./image-modal.component.scss'],
   providers: [ModalController],
-  imports:[ CommonModule, FormsModule, IonHeader, IonToolbar,IonButton,IonTitle, IonButtons, IonContent,IonImg,IonIcon, ],
+  imports:[ CommonModule, FormsModule, IonHeader, IonToolbar,IonButton, IonButtons, IonContent,IonImg,IonIcon, ],
 })
 export class ImageModalComponent  implements OnInit {
 

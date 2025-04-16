@@ -1,0 +1,41 @@
+<ion-content class="ion-padding">
+  <div class="image-upload" *ngIf="showImageUpload">
+    <ion-img
+      class="upload-img"
+      [src]="imageUrl || 'assets/img/placeholder.png'"
+      (click)="triggerFileInput()"
+    ></ion-img>
+
+    <input
+      type="file"
+      #fileInput
+      (change)="onFileSelected($event)"
+      accept="image/*"
+      capture="camera"
+      style="display: none"
+    />
+  </div>
+
+  <form [formGroup]="recipeForm" (ngSubmit)="handleSubmit()">
+    <ion-item>
+      <ion-label position="stacked">Recipe Name</ion-label>
+      <ion-input formControlName="name" placeholder="Recipe Name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Category</ion-label>
+      <ion-select formControlName="category" interface="action-sheet" (ionChange)="categoryChanged($event)">
+        <ion-select-option *ngFor="let cat of categories$ | async" [value]="cat">{{ cat }}</ion-select-option>
+        <ion-select-option value="__new__">➕ Add New Category</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button size="small" fill="clear" (click)="removeCategory()" [disabled]="!recipeForm.value.category">
+      <ion-icon name="remove-outline"></ion-icon> Remove Category
+    </ion-button>
+
+    <ion-button expand="block" type="submit" [disabled]="recipeForm.invalid || isSubmitting">
+      {{ mode === 'edit' ? 'Save Changes' : 'Add Recipe' }}
+    </ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,11 @@
+<header-custom [headerTitle]="'User'"></header-custom>
+
+<ion-content [fullscreen]="true">
+  @if (authService.currentUserSig()==null) {
+    <login></login>
+    <register> </register>
+  }
+  @if (authService.currentUserSig()) {
+    <ion-button (click)="logout()">Logout</ion-button>
+  }
+</ion-content>

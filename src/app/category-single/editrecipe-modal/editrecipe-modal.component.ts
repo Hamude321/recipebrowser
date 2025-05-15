@@ -13,19 +13,23 @@ import { selectAllCategories } from 'src/app/services/store/category/category.se
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RecipeFormComponent } from "../../recipe-form/recipe-form.component";
 import { updateRecipe } from 'src/app/services/store/recipe/recipe.actions';
+import { addIcons } from 'ionicons';
+import * as icons from 'ionicons/icons';
 
 @Component({
   selector: 'editrecipe-modal',
   templateUrl: './editrecipe-modal.component.html',
   styleUrls: ['./editrecipe-modal.component.scss'],
-  imports: [CommonModule, FormsModule, IonHeader, IonToolbar, IonButton, IonTitle, IonButtons,IonContent,  ReactiveFormsModule, RecipeFormComponent],
+  imports: [CommonModule, FormsModule, IonHeader, IonToolbar, IonButton, IonTitle, IonButtons,IonContent,  ReactiveFormsModule, RecipeFormComponent, IonIcon],
   standalone: true,
   providers: [ModalController]
 })
 export class EditrecipeModalComponent {
   @Input() recipe!: Recipe;
 
-  constructor(private modalCtrl: ModalController) {}
+  constructor(private modalCtrl: ModalController) {
+    addIcons({ ...icons });
+  }
 
   submitChanges(updatedData: Partial<Recipe>) {
     if (!this.recipe?.id) return;

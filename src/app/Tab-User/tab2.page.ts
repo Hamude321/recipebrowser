@@ -1,15 +1,15 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/angular/standalone';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { RegisterComponent } from "../users/register/register.component";
 import { LoginComponent } from "../users/login/login.component";
 import { AuthService } from '../services/auth/auth.service';
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
-  imports: [IonButton, IonHeader, IonToolbar, IonTitle, IonContent, RegisterComponent, LoginComponent]
+  imports: [IonButton, IonHeader, IonToolbar, IonTitle, IonContent, RegisterComponent, LoginComponent, HeaderComponent]
 })
 export class Tab2Page implements OnInit {
 

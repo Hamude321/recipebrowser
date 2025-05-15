@@ -15,6 +15,7 @@ import { selectAllCategories } from '../services/store/category/category.selecto
 import { CommonModule } from '@angular/common';
 import { selectAllRecipes } from '../services/store/recipe/recipe.selectors';
 import { RecipeFormComponent } from "../recipe-form/recipe-form.component";
+import { HeaderComponent } from "../header/header.component";
 
 //Recipe browser
 //runter scrollen
@@ -26,7 +27,7 @@ import { RecipeFormComponent } from "../recipe-form/recipe-form.component";
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ReactiveFormsModule, FormsModule, CommonModule, RecipeFormComponent],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ReactiveFormsModule, FormsModule, CommonModule, RecipeFormComponent, HeaderComponent],
 })
 export class Tab3Page implements OnInit {
   @ViewChild(RecipeFormComponent) recipeFormComponent?: RecipeFormComponent;

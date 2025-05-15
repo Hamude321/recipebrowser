@@ -1,0 +1,8 @@
+<header-custom [headerTitle]="'Add Recipe'"></header-custom>
+
+<ion-content [fullscreen]="true" [scrollY]="true">
+  <recipe-form
+    [mode]="'add'"
+    (formSubmitted)="submitRecipe($event)">
+  </recipe-form>
+</ion-content>

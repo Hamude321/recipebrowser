@@ -60,7 +60,7 @@ export class CategorySingleComponent  {
       component: EditrecipeModalComponent,
       componentProps: { recipe, categories },
       breakpoints: [0, 0.8, 1],
-      initialBreakpoint: 0.8,
+      initialBreakpoint: 1,
       backdropDismiss: true,
     });
   

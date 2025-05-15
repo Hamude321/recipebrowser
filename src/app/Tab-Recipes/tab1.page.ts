@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem } from '@ionic/angular/standalone';
-import { RecipesService } from '../services/recipes.service';
 import { CommonModule } from '@angular/common';
 import { CategorySingleComponent } from "../category-single/category-single.component";
 import { combineLatest, map, Observable } from 'rxjs';
@@ -13,12 +12,13 @@ import { selectAllCategories } from '../services/store/category/category.selecto
 import { selectAdding, selectAllRecipes, selectDeleting, selectLoading, selectUpdating } from '../services/store/recipe/recipe.selectors';
 import { loadCategories } from '../services/store/category/category.actions';
 import { loadRecipes } from '../services/store/recipe/recipe.actions';
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, CommonModule, CategorySingleComponent],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, CommonModule, CategorySingleComponent, HeaderComponent],
 })
 export class Tab1Page implements AfterViewInit, OnInit {
 
